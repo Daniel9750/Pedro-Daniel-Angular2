@@ -1,0 +1,10 @@
+* {
+	font-size: 5rem;
+}
+/** || STYLES FOR THE NGCLASS DIRECTIVE */
+.red {
+	background-color: red;
+}
+.green {
+	background-color: green;
+}

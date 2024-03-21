@@ -1,0 +1,7 @@
+<!--* Template statements syntax ->  (event)="statement" -->
+<button [ngClass]="btnBackground" (click)="incrementLikesNumber();setBtnBackgroundColor()">👍🏻</button> <!--* You can concat methods.-->
+<span>{{ likes }}</span>
+<!--
+	! <button [ngClass]="btnBackground" (click)="console.log(likes)">👍🏻</button> 
+	! Due to the statement context (which is the component itself), you can't execute actions outside of it (like console.log).
+-->
