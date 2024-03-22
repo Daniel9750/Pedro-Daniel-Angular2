@@ -1,0 +1,241 @@
+https://angular.io/cli
+
+-Introducción a ng.
+-Para qué sirve angular.json y la sintaxis de sus propiedades.
+-Sintaxis al ejecutar comandos ng.
+-Prefijos en argumentos, opciones abreviadas y opciones no abreviadas.
+-Opciones booleanas, de array.
+-Cómo poner rutas.
+-Aparecen todos los comandos explicando como funcionan y los alias.
+
+
+
+"ng" es el comando para hacer cosas en Angular.
+"ng new" para crear un proyecto.
+"ng --help" para ver los comandos de ng.
+"ng serve" para ejecutar el proyecto y verlo en acción.
+"ng generate" para crear ficheros.
+
+El "angular.json" sirve para configurar el proyecto y cómo se comporta la línea de comandos.
+La configuración es única por cada proyecto, pero dentro del mismo fichero. Puedes configurar
+con "ng config" o editando el angular.json. Pinta que es más sencillo hacerlo con "ng config"
+XD.
+
+Las opciones en angular.json que se dan a la línea de comandos se escriben con dash-case y lo otro con camelCase.
+
+La sintaxis al ejecutar comandos es ng [argumento] [opciones]. Casi todos los argumentos tienen abreviaciones
+y algunas opciones las tienen. Los argumentos no tienen prefijo, las opciones empiezan por -- y las abreviaciones
+de las opciones empiezan por -.
+
+https://seahorse-technologies.atlassian.net/wiki/spaces/SP/pages/44138520/Workspace
+-4 conceptos necesarios para entender la estructura de un proyecto Angular.
+
+https://seahorse-technologies.atlassian.net/wiki/spaces/SP/pages/44007453/UI+Web+Component
+-Cómo se crea un componente, cómo puede saber un componente que existe otro, cómo se renderizan en
+la interfaz.
+-Qué es una directiva.
+
+HTML ENGINE
+https://angular.io/guide/template-overview
+https://angular-templates.io/product/fully-angular-admin-template/full-preview
+-Qué es una plantilla, qué puede incluir y no incluir.
+
+DATA BINDING
+https://angular.io/guide/inputs-outputs
+-Cómo funcionan @Input y @Output.
+-Configuraciones de @Input para hacer que el paso de padre a hijo sea obligatorio o haya conversión de por medio.
+
+https://angular.io/guide/property-binding
+Qué es el property binding y cómo funciona.
+
+https://angular.io/guide/attribute-binding
+Qué es el attribute binding y cómo funciona. Tener en cuenta que no funciona con propiedades.
+
+https://angular.io/guide/pipes-overview
+Qué son las pipes y cómo funcionan. Pipes comunes. Pipe key-value.
+
+<td>
+	<ng-template *ngFor="let property of event.location | keyvalue">
+    {{ property.value }},
+  </ng-template>  
+</td>
+
+https://angular.io/guide/attribute-directives
+Qué son las directivas y cómo funcionan.
+-@HostListener, para decorar la ejecución de funciones ante eventos.
+-Angular mantiene un contexto o alcance de datos para cada componente y directiva. Por
+lo que puede realizar asignaciones que podrían en un principio parecer raras de forma
+efectiva.
+-ngNonBindable, ¿cómo va el tema de las directivas con este parámetro?
+
+	https://angular.io/guide/built-in-directives#built-in-attribute-directives
+-Los tipos de directivas.
+-Directivas de atributo: ngClass, ngStyle, ngModel.
+-Directivas de estructura: *ngIf, *ngFor (trackBy), *ngSwitch.
+-ng-container.
+
+
+<p [appHighlight]="color">Highlight me!</p>
+The [appHighlight] attribute binding performs two tasks:
+    Applies the highlighting directive to the <p> element
+    Sets the directive's highlight color with a property binding
+
+
+----------------------------------------------------------------------------------------------------------
+https://angular.io/guide/component-interaction
+-Variables locales (#), para acceder a las propiedades y métodos de un hijo desde el padre.
+
+Pipe key-value
+https://angular.io/api/common/KeyValuePipe
+<td>
+	<ng-template *ngFor="let property of event.location | keyvalue">
+    {{ property.value }},
+  </ng-template>  
+</td>
+
+https://angular.io/api/common/NgClass
+Aplicar clases de manera dinámica y dando como valor a [ngClass] strings, arrays u objetos.
+
+https://angular.io/api/common/NgStyle
+Hay que dar a ngStyle una pareja key-value.
+
+https://angular.dev/guide/templates/control-flow
+Control de flujo con directivas @.
+
+EJERCICIOS QUE HEMOS HECHO PARA PRACTICAR ANGULAR:
+Ejercicios:
+https://jcoop.io/angular-practice-exercises/
+Creating a data-bound component
+https://plnkr.co/edit/K5VCArHCCMp6md3R6EPn?p=info&preview
+Communicating with child components
+https://plnkr.co/edit/9T83ljlen2h7EsV2fgHZ?p=info&preview
+Communicating with parent components:
+https://plnkr.co/edit/RUxtYuKgQIVHAiQHxfEs?p=preview&preview
+Using template variables to interact with child components:
+https://plnkr.co/edit/zxDekD9IUzHgKKB5tZFA?p=info&preview
+Styling components:
+https://plnkr.co/edit/BM72OxU6FjgxBrQlazj5?p=info&preview
+ngFor:
+https://plnkr.co/edit/R3m5n2acqlTiR35axQgD?p=info&preview
+ngIf:
+https://plnkr.co/edit/0dA4egxrHpAKr0s6qsxS?p=info&preview
+ngSwitch
+https://plnkr.co/edit/ROrRuiygWC03IeQTOwpa?p=info&preview
+ngClass:
+https://plnkr.co/edit/EwP31zf9MERvquoM8aVp?p=info&preview
+ngStyle:
+https://plnkr.co/edit/fDTwo35Y62tQFGTcCXAE?p=info&preview
+Using the lowercase pipe:
+https://plnkr.co/edit/vhO5AwdkUb1kNLKTu7Zc?p=info&preview
+Using the date pipe with parameters:
+https://plnkr.co/edit/Reeq1il8tMS3uzVB8yWc?p=info&preview
+Creating a custom pipe:
+https://plnkr.co/edit/mCzpeOXVRFDzk0jPHfvW?p=info
+Using template variables to interact with child components:
+https://plnkr.co/edit/zxDekD9IUzHgKKB5tZFA?p=info&preview
+Styling components:
+https://plnkr.co/edit/BM72OxU6FjgxBrQlazj5?p=info&preview
+ngFor:
+https://plnkr.co/edit/R3m5n2acqlTiR35axQgD?p=info&preview
+ngIf:
+https://plnkr.co/edit/0dA4egxrHpAKr0s6qsxS?p=info&preview
+ngSwitch
+https://plnkr.co/edit/ROrRuiygWC03IeQTOwpa?p=info&preview
+ngClass:
+https://plnkr.co/edit/EwP31zf9MERvquoM8aVp?p=info&preview
+ngStyle:
+https://plnkr.co/edit/
+Using the lowercase pipe:
+https://plnkr.co/edit/vhO5AwdkUb1kNLKTu7Zc?p=info&preview
+Using the date pipe with parameters:
+https://plnkr.co/edit/Reeq1il8tMS3uzVB8yWc?p=info&preview
+Creating a custom pipe:
+https://plnkr.co/edit/mCzpeOXVRFDzk0jPHfvW?p=info
+
+
+-------------------------------------------------------------------
+-Event bindings (easy).
+https://angular.dev/guide/templates/event-binding
+Sintaxis, eventos de teclado, eventos pasivos. Forma de Angular de asociar eventos 
+objetivo a directivas o elementos.
+
+-Built-in control flow.
+https://angular.dev/guide/templates/control-flow
+@if, @for y @switch, mejoran ngIf, ngFor y ngSwitch. El @for tenía
+el @empty y el "track" como cosas curiosas.
+
+-Statements.
+https://angular.dev/guide/templates/template-statements
+Contexto de plantilla y de componente.
+
+
+-UX.
+Angular Material, te da componentes definidos y utilidades, pero a su vez
+son personalizables:
+https://material.angular.io/guide/getting-started | Tutorial de comienzo.
+https://material.angular.io/components/categories | Diferentes componentes incluidos.
+https://material.angular.io/guides | Guías de uso.
+https://material.angular.io/cdk/categories | CDK, utilidades de accesiblidad, comportamiento, etc.
+
+-Routing.
+https://angular.io/guide/routing-overview 
+https://angular.io/guide/router#generate-an-application 
+Hay que añadir RouterLink, RouterLinkActive y RouterOutlet.
+ORDEN DE RUTAS: 
+1)Rutas más generales.
+2)Rutas menos generales.
+3)Ruta vacía.
+4)Ruta fallback, te dirigen a ella si intentas acceder a otra que no existe.
+
+Se pueden poner rutas relativas, títulos, transferir información entre rutas,
+poner rutas hijas.
+
+Lazy loading: https://angular.io/guide/lazy-loading-ngmodules
+
+Guardia de rutas: https://angular.io/guide/router#preventing-unauthorized-access.
+-------------------------------------------------------------------
+-Application design.
+-------------------------------------------------------------------
+-Angular Compute: DI-Services (Medio):
+	https://angular.io/guide/architecture-services
+	https://angular.io/guide/dependency-injection-overview
+	https://angular.io/tutorial/first-app/first-app-lesson-09
+	https://angular.io/guide/singleton-services
+	
+	Se tiene que usar una función inject() para inyectar el servicio. Además,
+	los servicios se usan para lógica que no tiene que ver con la experiencia
+	de usuario, como validación de inputs y peticiones.
+	
+-Angular Compute: Rx & Observables.
+-Testing frameworks.
+
+-Angular Networking (Medio).
+-Volver a las rutas.
+-Generator: MF-SPA Angular Generator: schematics cli.
+
+TDD
+	https://www.paradigmadigital.com/dev/tdd-como-metodologia-de-diseno-de-software/
+	https://medium.com/@megha.d.parmar2018/angular-unit-testing-with-jest-2023-2676faa2e564
+	Aquí podría ir algún tutorial de los testing frameworks de Angular.
+
+https://angular.dev/guide/testing/components-basics#reduce-the-setup
+-Testing de solo clases.
+-Testing de interacción de clase del componente con DOM del componente (lo más común).
+-Testing en entornos que no sean navegadores.
+
+-------------------------------------------------------------------
+LIBRERÍAS:
+https://www.npmjs.com/package/json-server | Hacer peticiones HTTP ficticias.
+https://www.npmjs.com/package/@emailjs/browser?activeTab=versions | Enviar correos electrónicos.
+https://github.com/tinesoft/ngx-cookieconsent | Cookie consent.
+https://www.npmjs.com/package/ngx-echarts | Gráficas.
+https://www.npmjs.com/package/ng2-charts | Gráficas.
+https://swimlane.gitbook.io/ngx-charts | Gráficas.
+https://www.npmjs.com/package/aws-rum-web | Recoge datos como tiempo de carga de páginas, errores de JavaScript y peticiones HTTP.
+https://single-spa.js.org/docs/create-single-spa/ | Lo configuras y te ofrece configuraciones autogeneradas al crear proyectos.
+
+-------------------------------------------------------------------
+TAREA: 
+-PROBAR @IF, @FOR Y @SWITCH.
+-RouterLinkActive.
+-Ver cómo se pasa información entre rutas.
