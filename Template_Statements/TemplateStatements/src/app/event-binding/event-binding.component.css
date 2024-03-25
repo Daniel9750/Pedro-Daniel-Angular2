@@ -1,0 +1,40 @@
+input {
+	border: black 1px solid;
+	color: black;
+	font: inherit;
+}
+.p-styles {
+	text-align: center;
+	font-size: 1.3rem;
+	margin-block: 1.5em;
+}
+.bold {
+	font-weight: bold;
+}
+.bigger-font {
+	font-size: 1.7rem;
+}
+.red {
+	color: red;
+}
+button {
+	border: none;
+	padding: 1em;
+	font-size: 1.5rem;
+	color: black;
+	background-color: rgb(255, 119, 0);
+	margin: 0 auto;
+	display: block;
+}
+button:hover {
+	background-color: rgb(255, 158, 73);
+}
+button:active {
+	background-color: rgb(254, 177, 109);
+}
+div {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-size: 2rem;
+}

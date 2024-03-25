@@ -1,0 +1,24 @@
+<h1>Template statements</h1>
+<p class="p-styles bigger-font bold">
+	Template statements are methods or properties used to respond to user events.
+</p>
+<p class="p-styles bigger-font bold">
+	Clicking on the orange button below will both increment the input's value by one and print a like emoji (👍🏻)
+	down the button, using template statements.
+</p>
+<hr>
+<p class="p-styles">
+	likesNumber attribute value (From the template) => {{ likesNumber.value }}
+	<input #likesNumber type="number" id="likesNumber" disabled value="0">
+</p>
+<button (click)="insertNewLikeEmoji(); incrementInputValueByOne(likesNumber)">
+	Smash that like button! 👍🏻
+</button>
+<div #emojiContainer></div>
+<p class="p-styles">
+	likesNumber property value (From the component) => {{ likesNumber }} 
+</p>
+<p class="p-styles bold red">
+	❗Angular prioritizes template context over component one when there's a name conflict ("likesNumber" in this case)❗
+</p>
+<hr>

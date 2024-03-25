@@ -222,6 +222,7 @@ https://angular.dev/guide/testing/components-basics#reduce-the-setup
 -Testing de solo clases.
 -Testing de interacción de clase del componente con DOM del componente (lo más común).
 -Testing en entornos que no sean navegadores.
+-WaitForAsync, beforeEach, detectChanges.
 
 -------------------------------------------------------------------
 LIBRERÍAS:
