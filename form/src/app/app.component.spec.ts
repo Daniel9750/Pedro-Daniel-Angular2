@@ -2,8 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  let fixture:ComponentFixture<AppComponent>;
-  let app:AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let app: AppComponent;
+	let appFixture: HTMLElement;
+  let appFixtureButton: HTMLButtonElement;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
@@ -13,6 +16,8 @@ describe('AppComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.componentInstance;
+		appFixture = fixture.nativeElement;
+		appFixtureButton = appFixture.querySelector("button") as HTMLButtonElement;
   });
 
   it('should create the app', () => {
@@ -20,57 +25,70 @@ describe('AppComponent', () => {
   });
 
   it('should have a fullname', () => {
-    let appFixture = fixture.nativeElement;
-    let appFixtureButton = appFixture.querySelector('button');
+    let appFullname = appFixture.querySelector('input[formControlName="fullname"]') as HTMLInputElement;
     appFixtureButton.click();
-    let appFullname:HTMLInputElement = appFixture.querySelector('input[formControlName="fullname"]');
-    expect(appFullname.getAttribute('class')).toContain('is-invalid');
-    appFullname.value = 'dcfgvh';
     fixture.detectChanges();
+    expect(appFullname.classList.toString()).toContain('is-invalid');
+    appFullname.value = 'dcfgvh';
+		appFullname.dispatchEvent(new Event("input"));
     appFixtureButton.click();
-    expect(appFullname.getAttribute('class')).not.toContain('is-invalid');
-    console.log(appFullname.getAttribute('class'));
+    fixture.detectChanges();
+    expect(appFullname.classList.toString()).not.toContain('is-invalid');
   });
 
-
-/*
   it('should have an username', () => {
-    let appFixture = fixture.nativeElement;
-    let appFixtureButton = appFixture.querySelector('button');
+    let appUsername = appFixture.querySelector('input[formControlName="username"]') as HTMLInputElement;
     appFixtureButton.click();
-    let appUsername:HTMLInputElement = appFixture.querySelector('input[formControlName="username"]');
-    expect(appUsername.classList[0]).toBe('is-invalid');
-    appUsername.value = 'dcfgvh';
     fixture.detectChanges();
+    expect(appUsername.classList.toString()).toContain('is-invalid');
+    appUsername.value = 'dcfgvh';
+		appUsername.dispatchEvent(new Event("input"));
     appFixtureButton.click();
-    expect(appUsername.classList[0]).not.toBe('is-invalid');
+    fixture.detectChanges();
+    expect(appUsername.classList.toString()).not.toContain('is-invalid');
   });
 
   it('should have a valid email', () => {
-    
-    expect(app).toBeTruthy();
+		let appEmail = appFixture.querySelector('input[formControlName="email"]') as HTMLInputElement;
+    appFixtureButton.click();
+    fixture.detectChanges();
+    expect(appEmail.classList.toString()).toContain('is-invalid');
+		appEmail.value = "invalid-email";
+		appEmail.dispatchEvent(new Event("input"));
+    fixture.detectChanges();
+    expect(appEmail.classList.toString()).toContain('is-invalid');
+		appEmail.value = "validemail@gmail.com";
+		appEmail.dispatchEvent(new Event("input"));
+    fixture.detectChanges();
+    expect(appEmail.classList.toString()).not.toContain('is-invalid');
   });
 
   it('should have a password', () => {
-    let appFixture = fixture.nativeElement;
-    let appFixtureButton = appFixture.querySelector('button');
+    let appPassword = appFixture.querySelector('input[formControlName="password"]') as HTMLInputElement;
     appFixtureButton.click();
-    let appPassword:HTMLInputElement = appFixture.querySelector('input[formControlName="password"]');
-    expect(appPassword.classList[0]).toBe('is-invalid');
-    appPassword.value = 'dcfgvh';
     fixture.detectChanges();
-    appFixtureButton.click();
-    expect(appPassword.classList[0]).not.toBe('is-invalid');
+    expect(appPassword.classList.toString()).toContain('is-invalid');
+    appPassword.value = 'dcfgvh';
+		appPassword.dispatchEvent(new Event("input"));
+    fixture.detectChanges();
+    expect(appPassword.classList.toString()).not.toContain('is-invalid');
   });
 
   it('should have confirm password equal to password', () => {
-    
-    expect(app).toBeTruthy();
+		let appPassword = appFixture.querySelector('input[formControlName="password"]') as HTMLInputElement;
+		let appConfirm = appFixture.querySelector('input[formControlName="confirmPassword"]') as HTMLInputElement;
+		appPassword.value = "1234";
+		appConfirm.value = "5678";
+		appPassword.dispatchEvent(new Event("input"));
+		appConfirm.dispatchEvent(new Event("input"));
+		appFixtureButton.click();
+		fixture.detectChanges();
+    expect(appConfirm.classList.toString()).toContain('is-invalid');
+		appPassword.value = "1234";
+		appConfirm.value = "1234";
+		appPassword.dispatchEvent(new Event("input"));
+		appConfirm.dispatchEvent(new Event("input"));
+		fixture.detectChanges();
+    expect(appConfirm.classList.toString()).not.toContain('is-invalid');
   });
-
-
-*/
- 
-
-
 });
