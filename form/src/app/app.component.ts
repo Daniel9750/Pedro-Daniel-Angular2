@@ -42,8 +42,7 @@ export class AppComponent implements OnInit {
             Validators.required
           ]
         ],
-        confirmPassword: ['', Validators.required],
-        acceptTerms: [false, Validators.requiredTrue]
+        confirmPassword: ['', Validators.required]
       },
       {
         validators: [Validation.match('password', 'confirmPassword')]
